@@ -1,41 +1,44 @@
+type ContactType = "email" | "tel";
+
+
+
 declare namespace Controller {
   namespace Person {
 
 	interface ReqBodyPost {
-	  nome: string;
+	  id?: number;
+	  name: string;
 	  cpf: string;
-	  type: boolean;
-	  description: string;
 	}
 
 	interface ReqBodyPatch {
-	  nome?: string;
+	  id?: number;
+	  name?: string;
 	  cpf?: string;
-	  type?: boolean;
-	  description?: string;
 	}
   }
 
   namespace Contact {
 
 	interface ReqBodyPost {
-	  nome: string;
-	  cpf: string;
-	  type: boolean;
+	  id?: number;
+	  type: ContactType;
 	  description: string;
+	  personId?: number;
 	}
 	
 	interface ReqBodyPatch {
-	  nome?: string;
-	  cpf?: string;
-	  type?: boolean;
+	  id?: number;
+	  type?: ContactType;
 	  description?: string;
+	  personId?: number;
 	}
   }
 }
 
 
 declare namespace Model {
+
   interface Person {
 	id: number;
 	name: string;
@@ -44,8 +47,9 @@ declare namespace Model {
 
   interface Contact {
 	id: number;
-	type: boolean;
+	type: ContactType;
 	description: string;
-	personId: number;
+	person?: number;
+	personId?: number;
   }
 }

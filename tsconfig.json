@@ -20,11 +20,10 @@
     "paths": {
       "@/*": ["./src"],
 	  "@models/*": ["./src/models/*"],
-	  "@view/*": ["./src/view/*"],
-      "@controller/*": ["./src/controller/*"],
+	  "@views/*": ["./src/views/*"],
+      "@controllers/*": ["./src/controllers/*"],
       "@services/*": ["./src/services/*"],
       "@modules/*": ["./src/modules/*"],
-      "@routes/*": ["./src/routes/*"]
     }
   }
 }
