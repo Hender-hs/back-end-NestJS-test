@@ -1,7 +1,7 @@
+import { Contact } from "@ContactModel/contact.entity";
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { FindOneOptions, FindOptionsWhere, Repository } from "typeorm";
-import { Contact } from "@models/contact.entity";
+import { FindOneOptions, FindOptionsWhere, Like, Repository } from "typeorm";
 
 import CContact = Controller.Contact;
 
@@ -13,8 +13,11 @@ export class ContactService {
 	private ContactRepositoryModel: Repository<Contact>,
   ) {}
   
-  async findAll(): Promise<Contact[]> {
+  async findAll(search?: string): Promise<Contact[]> {
 	const options: FindOneOptions<Contact> = {
+	  where: {
+		...(search && { description: Like(`%${search}%`) })
+	  },
 	  relations: ["person"]
 	};
 	return await this.ContactRepositoryModel.find(options);

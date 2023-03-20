@@ -1,10 +1,10 @@
-import { Contact } from "@models/contact.entity";
-import { Person } from "@models/person.entity";
+import { Contact } from "@ContactModel/contact.entity";
+import { ContactModule } from "@ContactModule/contact.module";
 import { ModuleMetadata } from "@nestjs/common";
 import { Module } from "@nestjs/common";
 import { TypeOrmModule, TypeOrmModuleOptions } from "@nestjs/typeorm";
-import { ContactModule } from "./contact.module";
-import { PersonModule } from "./person.module";
+import { Person } from "@PersonModel/person.entity";
+import { PersonModule } from "@PersonModule/person.module";
 import * as dotenv from "dotenv"; 
 
 dotenv.config();

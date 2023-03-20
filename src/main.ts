@@ -1,10 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from '@modules/app.module';
 import * as expressListRoutes from 'express-list-routes';
+import * as dotenv from "dotenv"; 
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+
+dotenv.config();
 
 /* TODOs: 
- * 		-- Authetication
- * 		-- Body validation
+ * 		-- Authetication V
+ * 		-- Body validation V
  * 		-- Docker configuration
  * 		-- Error Handling in Controllers
  * 		-- Create a table to ONLY store the Contact Type
@@ -12,7 +16,9 @@ import * as expressListRoutes from 'express-list-routes';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  app.enableCors();
+  app.useGlobalPipes(new ValidationPipe());
+  await app.listen(process.env.API_PORT || 3000);
   const server = app.getHttpServer()
   const existingRoutes = server._events.request._router
   expressListRoutes(existingRoutes);

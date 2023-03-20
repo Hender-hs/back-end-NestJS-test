@@ -1,10 +1,10 @@
-import { PersonController } from "@controllers/person.controller";
-import { Contact } from "@models/contact.entity";
-import { Person } from "@models/person.entity";
+import { Contact } from "@ContactModel/contact.entity";
+import { ContactService } from "@ContactService/contact.service";
 import { Module, ModuleMetadata } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ContactService } from "@services/contact.service";
-import { PersonService } from "@services/person.service";
+import { PersonController } from "@PersonController/person.controller";
+import { Person } from "@PersonModel/person.entity";
+import { PersonService } from "@PersonService/person.service";
 
 const moduleMetaData: ModuleMetadata = {
   imports: [TypeOrmModule.forFeature([Person]), TypeOrmModule.forFeature([Contact]) ],

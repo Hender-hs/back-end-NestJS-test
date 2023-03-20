@@ -19,11 +19,21 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@/*": ["./src"],
-	  "@models/*": ["./src/models/*"],
-	  "@views/*": ["./src/views/*"],
-      "@controllers/*": ["./src/controllers/*"],
-      "@services/*": ["./src/services/*"],
-      "@modules/*": ["./src/modules/*"],
+	  "@AuthModel/*": ["./src/auth/model/*"],
+      "@Authcontroller/*": ["./src/auth/controller/*"],
+      "@AuthService/*": ["./src/auth/service/*"],
+      "@AuthModule/*": ["./src/auth/module/*"],
+	  "@ContactModel/*": ["./src/contact/model/*"],
+      "@ContactController/*": ["./src/contact/controller/*"],
+      "@ContactService/*": ["./src/contact/service/*"],
+      "@ContactModule/*": ["./src/contact/module/*"],
+	  "@PersonModel/*": ["./src/person/model/*"],
+      "@PersonController/*": ["./src/person/controller/*"],
+      "@PersonService/*": ["./src/person/service/*"],
+      "@PersonModule/*": ["./src/person/module/*"],
+	  "@OrmModel/*": ["./src/orm/model/*"],
+      "@OrmService/*": ["./src/orm/service/*"],
+      "@OrmModule/*": ["./src/orm/module/*"],
     }
   }
 }

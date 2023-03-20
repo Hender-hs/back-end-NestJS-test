@@ -1,6 +1,7 @@
-import { Contact } from "@models/contact.entity";
-import { Controller, Post, Patch, Get, Delete, Param, Body } from "@nestjs/common";
-import { ContactService } from "@services/contact.service";
+import { ContactService } from "@ContactService/contact.service";
+import { Contact } from "@ContactModel/contact.entity";
+import { Controller, Post, Patch, Get, Delete, Param, Body, Query } from "@nestjs/common";
+import { CreateContactDto, UpdateContactDto } from "src/validator/contact.dto";
 
 import CContact = Controller.Contact;
 
@@ -20,15 +21,22 @@ export class ContactController {
 	return contact;
   }
 
+  @Get()
+  async searchPerson(@Query("search") search: string): Promise<Contact[]> {
+	const contacts = await this.contactService.findAll(search);
+	return contacts;
+  }
+
+
   @Post("create")
-  async createContact(@Body() body: CContact.ReqBodyPost): Promise<Contact> {
+  async createContact(@Body() body: CreateContactDto): Promise<Contact> {
 	const createdContact = await this.contactService.create(body);
 	return createdContact;
   }
 
   @Patch(":id")
   async updateContact(@Param("id") id: string, 
-				@Body() body: CContact.ReqBodyPatch): Promise<Contact> {
+				@Body() body: UpdateContactDto): Promise<Contact> {
 	const contactUpdated = await this.contactService.update(Number(id), body);
 	return contactUpdated;
   }

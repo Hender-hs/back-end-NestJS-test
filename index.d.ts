@@ -22,14 +22,14 @@ declare namespace Controller {
 
 	interface ReqBodyPost {
 	  id?: number;
-	  type: ContactType;
+	  type: ContactType | string;
 	  description: string;
 	  personId?: number;
 	}
 	
 	interface ReqBodyPatch {
 	  id?: number;
-	  type?: ContactType;
+	  type?: ContactType | string;
 	  description?: string;
 	  personId?: number;
 	}
@@ -47,7 +47,7 @@ declare namespace Model {
 
   interface Contact {
 	id: number;
-	type: ContactType;
+	type: ContactType | string;
 	description: string;
 	person?: number;
 	personId?: number;

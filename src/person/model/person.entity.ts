@@ -1,5 +1,5 @@
+import { Contact } from "@ContactModel/contact.entity";
 import { Entity, Column, PrimaryGeneratedColumn, JoinTable, OneToMany } from "typeorm";
-import { Contact } from "./contact.entity";
 
 import CPerson = Controller.Person;
 
