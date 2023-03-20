@@ -9,6 +9,8 @@ It also has the docker-compose file configured.
 
 #### API Routes  
 
+<font size="7"> All routes are protected. It requires the access token in the authorization header </font>  
+
 ##### Access Token Route
 ```http
 GET /auth/get-access
