@@ -163,3 +163,10 @@ Things that I believe it's good to finish:
 *     Error Handling.  
 *     Exclusive `contact type` table.  
 *     Tables timestamps.  
+
+
+### Bugs and Errors to Fix:
+Erros and bugs found on:
+
+*     "@nestjs/class-validator" lib. @ValidateIf not working properly and breaking the server when a value comes undefined.  
+*     "@nestjs/jwt" breaks the application when provide a string to .sign() method of JwtService Class, which was supposted to work with a string JSON.  
