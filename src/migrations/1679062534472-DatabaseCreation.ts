@@ -17,7 +17,7 @@ export class DatabaseCreation1679062534472 implements MigrationInterface {
 		  },
 		  {
 			name: "cpf",
-			type: "varchar(11)",
+			type: "varchar(15)",
 		  }
 		]
 	  }
