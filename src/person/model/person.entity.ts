@@ -11,7 +11,7 @@ export class Person implements Model.Person {
   @Column({ length: 255 })
   name: string;
 
-  @Column({ length: 11 })
+  @Column({ length: 15 })
   cpf: string;  
 
   @OneToMany(() => Contact, type => type.person)
