@@ -12,11 +12,13 @@ It also has the docker-compose file configured, but it's necessary to set up you
 <font size="7"> All routes are protected. It requires the access token in the authorization header </font>  
 
 ##### Access Token Route
+###### Public
 ```http
 GET /auth/get-access
 ```   
 
 ##### Person Routes
+###### Private
 ```http
 GET /person/all  
 ```  
@@ -91,7 +93,8 @@ PATCH /person/:id
 DELETE /person/:id  
 ```  
 
-##### Contact Routes
+##### Contact Routes 
+###### Private
 ```http
 GET /contact/all  
 ```
@@ -151,6 +154,8 @@ PATCH /contact/:id
 ```http
 DELETE /contact/:id  
 ```  
+
+<br/>
 
 ### TODOs:
 Things that I believe it's good to finish:
