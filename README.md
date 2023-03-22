@@ -161,5 +161,5 @@ DELETE /contact/:id
 Things that I believe it's good to finish:
 
 *     Error Handling.  
-*     Create a table to ONLY store the "contact" row type.  
-*     Add timestamps to our tables.  
+*     Exclusive `contact type` table.  
+*     Tables timestamps.  
