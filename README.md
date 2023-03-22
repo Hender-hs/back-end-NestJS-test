@@ -19,19 +19,74 @@ GET /auth/get-access
 ##### Person Routes
 ```http
 GET /person/all  
-```
+```  
+```json
+[
+  {
+    "id": "number",
+    "name": "string",
+    "cpf": "string",
+    "contact": [
+      {
+        "id": "number",
+        "type": "string",
+        "description": "string"
+      }
+    ]
+  }
+]
+```  
+
+<br/>
+ 
 ```http
 GET /person/:id  
 ```
-```http
-GET /person  
-```
+```json
+{
+  "id": "number",
+  "name": "string",
+  "cpf": "string",
+  "contact": [
+    {
+      "id": "number",
+      "type": "string",
+      "description": "string"
+    }
+  ]
+}
+```  
+
+<br/>
+ 
 ```http
 POST /person/create  
-```
+```  
+```json
+{
+  "name": "string",
+  "cpf": "string",
+  "type": "string",
+  "description": "string"
+}
+```  
+
+<br/>
+ 
 ```http
 PATCH /person/:id  
-```
+```  
+```json
+{
+  "name": "string",
+  "cpf": "string",
+  "type": "string",
+  "description": "string"
+}
+```  
+
+<br/>
+ 
 ```http
 DELETE /person/:id  
 ```  
@@ -40,18 +95,59 @@ DELETE /person/:id
 ```http
 GET /contact/all  
 ```
+```json
+[
+  {
+    "id": "number",
+    "type": "string",
+    "description": "string",
+    "personId": "number"
+  }
+]
+```  
+
+<br/>
+ 
 ```http
 GET /contact/:id
+```  
+```json
+{
+  "id": "number",
+  "type": "string",
+  "description": "string",
+  "personId": "number"
+}
 ```
-```http
-GET /contact  
-```
+
+<br/>
+ 
 ```http
 POST /contact/create  
+```  
+```json
+{
+  "type": "string",
+  "description": "string",
+  "personId": "number"
+}
 ```
+
+<br/>
+ 
 ```http
 PATCH /contact/:id  
+```  
+```json
+{
+  "type": "string",
+  "description": "string",
+  "personId": "number"
+}
 ```
+
+<br/>
+ 
 ```http
 DELETE /contact/:id  
 ```  
