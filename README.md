@@ -162,7 +162,7 @@ Things that I believe it's good to finish:
 
 *     Error Handling.  
 *     Exclusive `contact type` table.  
-*     Tables timestamps.  
+*     Columns with timestamps.  
 
 
 ### Bugs and Errors to Fix:
