@@ -35,7 +35,7 @@ export class PersonController {
   @Post("create")
   async createPerson(@Body() body: CreatePersonDto): Promise<Person> {
 	const createdPerson = await this.personService.create(body);
-	const { id: _, ...createdContact } = await this.contactService.create({ personId: createdPerson.id, ...body });
+	const { id: _, person: __, ...createdContact } = await this.contactService.create({ personId: createdPerson.id, ...body });
 	return {...createdPerson, ...createdContact};
   }
 
@@ -44,7 +44,7 @@ export class PersonController {
 			   @Query("contactId") contactId: string, 
 			   @Body() body: UpdatePersonDto): Promise<Person> {
 	const updatedPerson = await this.personService.update(Number(id), body);
-	const { id: _, ...updatedContact } = await this.contactService.update(Number(contactId), body);
+	const { id: _, person: __, ...updatedContact } = await this.contactService.update(Number(contactId), body);
 	return { ...updatedPerson, ...updatedContact };
   }
 
